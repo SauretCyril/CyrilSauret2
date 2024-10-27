@@ -121,6 +121,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             headerLogo.style.filter = 'none';
         }
     });
+    
     var fab = document.querySelector('.fab');
     fab.addEventListener('click', () => {
         window.scrollTo({top: 0, behavior: 'smooth'});

@@ -1,0 +1,449 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #9b59b6;
+    --text-color: #000000;
+    --bg-color: #ffffff;
+    --bg-color-dark: #00000000;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    background: var(--bg-color);  /* Static background */
+    overflow-x: hidden;
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 2px;
+    background-color: color(srgb rgb(179, 47, 47) rgb(3, 80, 3) blue);
+    z-index: 11;
+}
+
+header {
+    background-color: var(--primary-color);
+    backdrop-filter: blur(5px);
+    color: white;
+    padding: 20px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    max-height: 50px;
+    width: auto;
+    vertical-align: middle;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 10px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-link {
+    display: inline-block;
+    padding: 8px 16px;
+    color: white;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.hero, #competences, #projets {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding-top: 100px;
+    position: relative;
+    min-height: 200px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.hero p {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: var(--text-color);
+}
+
+.cta-button, .submit-btn {
+    /* display: inline-block; */
+    display:inline-table;   
+    padding: 12px 24px;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover, .submit-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+
+.section {
+    background-color: var(--bg-color-dark);
+}
+.section-title {
+    text-align: center;
+    color: white; 
+    font-size: 1em;
+    /* margin-bottom: 50px; */
+    /* position: relative; */
+    font-family: 'Montserrat', sans-serif;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent-color);
+    margin: 20px auto 0;
+}
+
+.skills-grid  {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15px, 1fr));
+    gap: 10px;
+}
+
+.skill-card {
+    background-color: rgb(140, 207, 119,0);
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.skill-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    background: linear-gradient(to top, var(--secondary-color), transparent);
+    transition: height 0.3s ease;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+.skill-card:hover::before {
+    height: 100%;
+    animation: flameRise 1s infinite;
+}
+
+@keyframes flameRise {
+    0%, 100% {
+        height: 30%;
+    }
+    50% {
+        height: 70%;
+    }
+}
+
+.skill-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.skill-icon img {
+    transition: transform 0.3s ease;
+    width: 64px;
+    height: 64px;
+}
+
+.skill-card:hover .skill-icon img {
+    transform: rotate(360deg);
+}
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: var(--primary-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: var(--bg-color);
+    border: 4px solid var(--secondary-color);
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-item:nth-child(even)::after {
+    left: -50px;
+}
+
+.timeline-content {
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.timeline-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.timeline-content ul {
+    padding-left: 20px;
+}
+
+.timeline-content li {
+    margin-bottom: 5px;
+}
+
+.bio-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.profile-photo img {
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.bio-text {
+    flex: 1;
+}
+
+.photo-gallery {
+    margin-top: 40px;
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.gallery-img {
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-img:hover {
+    transform: scale(1.05);
+}
+
+.image-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.image-modal img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#company-info {
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#company-info img {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+#company-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+#company-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#company-info li {
+    margin-bottom: 5px;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeInUp {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.portal-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    opacity: 0.8;
+    z-index: -1;
+}
+
+.portal-effect::before, .portal-effect::after {
+    display: none;
+}
+
+#citation-du-jour {
+    background-color: var(--bg-color);
+    padding: 0;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+#citation-du-jour .quote-container {
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+}
+
+#citation-du-jour #quote-content {
+    color: var(--text-color);
+    font-size: 1em;
+    font-style: italic;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+#competences .section-title, #competences .skill-card h3, #competences .skill-card p {
+    color: var(--text-color);
+}
+
+#projets {
+    background-color: var(--bg-color);
+}
+
+#projets .section-title, #projets .skill-card h3, #projets .skill-card p {
+    color: var(--text-color);
+}
+
+@keyframes jsRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.javascript-logo {
+    width: 64px;
+    height: 64px;
+    fill: #f7df1e;
+    animation: jsRotate 10s linear infinite;
+}
+
+.skill-card:hover .javascript-logo {
+    animation-duration: 2s;
+}
+

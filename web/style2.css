@@ -19,7 +19,7 @@ body {
   background-color: var(--dark-color);
   color: var(--light-color);
   padding: 2rem 1rem;
-  z-index: 100;
+  z-index: 10;
   width: 250px;
   transition: transform 0.3s ease;
 }
@@ -96,11 +96,10 @@ body {
 
 /* Main Content */
 .main-content {
-  margin-left: 0px;
-  margin-right: 0px;
+  margin-left: 250px;
+  margin-right: 250px;
   padding: 2rem;
   margin-top: 80px; /* Adjust main content to account for header */
-  
 }
 
 .hero {
@@ -111,31 +110,18 @@ body {
 
 .hero-title {
   position: absolute;
-  top: 0%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, 50%);
+  transform: translate(-50%, -50%);
   z-index: 2;
   text-align: center;
   width: 100%;
   color: var(--dark-color);
-  background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white background */
+  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
   padding: 2rem;
   border-radius: 8px;
-  backdrop-filter: blur(10px); /* Optional: adds a slight blur effect */
+  backdrop-filter: blur(5px); /* Optional: adds a slight blur effect */
 }
-
-
-#quote-content {
-  
-  color: var(--text-color);
-  font-size: 1.2em;
-  font-style: italic;
-  white-space:unset;
-  overflow: visible !important;
-  text-overflow: ellipsis;
-}
-
-
 
 .hero-title h1 {
   font-size: 4rem;
@@ -151,12 +137,11 @@ body {
 }
 
 .hero-citation {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-style: italic;
-  color: var(--dark-color);
+  color: var(--primary-color);
   margin-top: 0.5rem;
   font-weight: 300;
-  text-align:Left;
 }
 
 .hero-slide {

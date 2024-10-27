@@ -1,7 +1,15 @@
-<html><head><base href="." /><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>ExpoCenter - Centre d'exposition et d'événements</title><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" /><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="./web/style2.css">
-  <link rel="stylesheet" href="./web/citation.css">
-</head><body>
+<html>
+  <head>
+    <base href="." />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cyril Sauret</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./web/style2.css">
+    <link rel="stylesheet" href="./web/style_skill.css">
+</head>
+<body>
 
 <header class="site-header">
   <div class="header-content">
@@ -18,68 +26,15 @@
 </header>
 
 <aside class="sidebar sidebar-left">
-  <svg class="logo" viewBox="0 0 200 80" style="width: 100%; height: auto;">
-    <text x="10" y="50" fill="white" font-size="24">ExpoCenter</text>
-  </svg>
-  <nav>
-    <ul class="nav-menu">
-      <li class="nav-item">
-        <a href="#organiser" class="nav-link">
-          <i class="fas fa-calendar-plus"></i> Organiser
-        </a>
-        <ul class="submenu">
-          <li class="submenu-item">
-            <a href="#congres" class="submenu-link" data-article="congres">
-              <i class="fas fa-microphone submenu-icon"></i>
-              Congrès & Conférences
-            </a>
-          </li>
-          <li class="submenu-item">
-            <a href="#salons" class="submenu-link" data-article="salons">
-              <i class="fas fa-booth submenu-icon"></i>
-              Salons & Expositions
-            </a>
-          </li>
-          <li class="submenu-item">
-            <a href="#sports" class="submenu-link" data-article="sports">
-              <i class="fas fa-running submenu-icon"></i>
-              Événements Sportifs
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li class="nav-item">
-        <a href="#visiter" class="nav-link">
-          <i class="fas fa-walking"></i> Visiter
-        </a>
-        <ul class="submenu">
-          <li class="submenu-item">
-            <a href="#espaces" class="submenu-link" data-article="espaces">
-              <i class="fas fa-building submenu-icon"></i>
-              Nos Espaces
-            </a>
-          </li>
-          <li class="submenu-item">
-            <a href="#acces" class="submenu-link" data-article="acces">
-              <i class="fas fa-map-marker-alt submenu-icon"></i>
-              Accès & Parking
-            </a>
-          </li>
-          <li class="submenu-item">
-            <a href="#services" class="submenu-link" data-article="services">
-              <i class="fas fa-concierge-bell submenu-icon"></i>
-              Services
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li class="nav-item">
-        <a href="#exposer" class="nav-link">
-          <i class="fas fa-booth"></i> Exposer
-        </a>
-      </li>
-    </ul>
-  </nav>
+    <section class="section" id="competences" >
+      <div class="container">
+        <h2 class="section-title">Mes Compétences</h2>
+        <div class="skills-grid" id="SK-competences">
+        </div>
+    </div>  
+    </section>
+
+<!-- </div> -->
 </aside>
 
 <aside class="sidebar sidebar-right">
@@ -126,13 +81,10 @@
 <main class="main-content">
   <section class="hero">
     <div class="hero-title">
-      <h1>Développeur - Testeur Polyvalent</h1>
-      <div>
-        <p  id ="quote-content">""</p>
-      </div>
+      <h1>Développeur - Tester Polyvalent</h1>
+      <p></p>
+      <p class="hero-citation" id="quote-content">"L'excellence au service de vos événements"</p>
     </div>
-     
-    
     <div class="hero-slide active" style="background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://picsum.photos/1920/1080?random=1')"></div>
     <div class="hero-slide" style="background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://picsum.photos/1920/1080?random=2')"></div>
     <div class="hero-slide" style="background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://picsum.photos/1920/1080?random=3')"></div>
@@ -268,6 +220,9 @@
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="./web/scripts.js"></script> 
+<script src="./web/script2.js"></script> 
 <script src="./web/script_citation.js"></script> 
-</body></html>
+<script src="./web/script_skill.js"></script> 
+
+</body>
+</html>
