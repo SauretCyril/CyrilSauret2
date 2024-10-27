@@ -1,0 +1,32 @@
+
+/* Article Styles */
+.article {
+    display: none;
+    animation: fadeIn 0.5s ease;
+  }
+  
+  .article.active {
+    display: block;
+  }
+  
+  .article-header {
+    margin-bottom: 2rem;
+  }
+  
+  .article-title {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .article-content {
+    line-height: 1.8;
+  }
+  
+  .article-image {
+    width: 100%;
+    border-radius: 8px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+  

@@ -1,0 +1,54 @@
+
+/* Header Styles */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 250px;
+    right: 250px;
+    height: 80px;
+    background-color: var(--light-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 99;
+  }
+  
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 2rem;
+  }
+  
+  .header-logo {
+    height: 50px;
+    width: auto;
+  }
+  
+  
+  
+  .contact-info {
+    font-size: 1.1em;
+    color: var(--dark-color);
+  }
+  
+  .contact-info i {
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+  }
+  
+  .ml-3 {
+    margin-left: 1rem;
+  }
+  
+  
+  .javascript-logo {
+    width: 64px;
+    height: 64px;
+    fill: #f7df1e;
+    animation: jsRotate 10s linear infinite;
+  }
+  
+  .skill-card:hover .javascript-logo {
+    animation-duration: 2s;
+  }
+  

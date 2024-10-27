@@ -6,8 +6,15 @@
     <title>Cyril Sauret</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./web/style2.css">
-    <link rel="stylesheet" href="./web/style_skill.css">
+    <link rel="stylesheet" href="./web/styles/main.css">
+    <link rel="stylesheet" href="./web/styles/skill.css">
+    <link rel="stylesheet" href="./web/styles/section.css">
+    <link rel="stylesheet" href="./web/styles/menu.css">
+    <link rel="stylesheet" href="./web/styles/timeline.css">
+    <link rel="stylesheet" href="./web/styles/citation.css">
+    <link rel="stylesheet" href="./web/styles/footer.css">
+    <link rel="stylesheet" href="./web/styles/header.css">
+    <link rel="stylesheet" href="./web/styles/article.css">
 </head>
 <body>
 
@@ -26,12 +33,11 @@
 </header>
 
 <aside class="sidebar sidebar-left">
-    <section class="section" id="competences" >
-      <div class="container">
+    <section class="section" >
         <h2 class="section-title">Mes Compétences</h2>
         <div class="skills-grid" id="SK-competences">
         </div>
-    </div>  
+   
     </section>
 
 <!-- </div> -->
@@ -80,11 +86,26 @@
 
 <main class="main-content">
   <section class="hero">
+    
     <div class="hero-title">
-      <h1>Développeur - Tester Polyvalent</h1>
+      <h1>Développeur - Testeur Polyvalent</h1>
       <p></p>
-      <p class="hero-citation" id="quote-content">"L'excellence au service de vos événements"</p>
     </div>
+
+    <!-- <div class="hero-citation">
+      <p id="quote-content">"citation"</p>
+    </div> -->
+    <section  class="hero-citation">
+      <!-- <div class="container"> -->
+          
+          <div class="quote-container">
+              <p id="quote-content">Chargement de la citation...</p>
+          </div>
+      <!-- </div> -->
+  </section>
+
+
+
     <div class="hero-slide active" style="background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://picsum.photos/1920/1080?random=1')"></div>
     <div class="hero-slide" style="background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://picsum.photos/1920/1080?random=2')"></div>
     <div class="hero-slide" style="background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://picsum.photos/1920/1080?random=3')"></div>
@@ -220,9 +241,9 @@
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="./web/script2.js"></script> 
-<script src="./web/script_citation.js"></script> 
-<script src="./web/script_skill.js"></script> 
+<script src="./web/scripts/main.js"></script> 
+<script src="./web/scripts/citation.js"></script> 
+<script src="./web/scripts/skill.js"></script> 
 
 </body>
 </html>

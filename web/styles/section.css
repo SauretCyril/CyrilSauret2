@@ -1,0 +1,21 @@
+
+.section {
+    background-color: var(--bg-color-dark);
+}
+.section-title {
+    text-align: center;
+    color: white; 
+    font-size: 1em;
+    /* margin-bottom: 50px; */
+    /* position: relative; */
+    font-family: 'Montserrat', sans-serif;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent-color);
+    margin: 20px auto 0;
+}
