@@ -1,0 +1,20 @@
+[
+  {
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+    "name": "Gestion d'Url",
+    "description": "Simple gestionnaire d'url, car les navigateurs ne permettent pas de gérer les onglets de façon satisfaisante",
+    "url": "#"
+  },
+  {
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+    "name": "Explorateur d'image local",
+    "description": "Permettre de gérer nos photos en local",
+    "url": "#"
+  },
+  {
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    "name": "Projet 3",
+    "description": "Travailler avec le model LLaMA",
+    "url": "#"
+  }
+]

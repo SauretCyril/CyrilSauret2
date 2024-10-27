@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <base href="">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cyril Sauret</title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="./web/style.css">
+    </head>
+    <body>
+        <div id="particles-js"></div>
+        <header>
+            <div class="container">
+                <nav>
+                    <a href="#" class="logo">
+                        <img src="https://example.com/your-logo.png" alt="Cyril Sauret Logo" id="header-logo">
+                    </a>
+                    <ul class="nav-menu">
+                        <li><a href="#accueil" class="nav-link">Accueil</a></li>
+                        <li><a href="#projets" class="nav-link">Projets</a></li>
+                        <li><a href="#competences" class="nav-link">Compétences</a></li>
+                        <li><a href="#parcours" class="nav-link">Parcours</a></li>
+                        <li><a href="#objectifs" class="nav-link">Objectifs</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <section id="accueil" class="hero">
+                <div class="portal-effect"></div>
+                <div id="hero-particles"></div>
+                <div class="container">
+                    <h1 class="animate-fadeInUp">Cyril Sauret - Développeur Testeur Polyvalent</h1>
+                    <p class="animate-fadeInUp"><span id="typed"></span></p>
+                    <a href="#competences" class="cta-button">Découvrir mes compétences</a>
+                </div>
+            </section>
+            <section id="citation-du-jour" class="section">
+                <div class="container">
+                    <h2 class="section-title">Citation Tech du Jour</h2>
+                    <div class="quote-container">
+                        <p id="quote-content">Chargement de la citation...</p>
+                    </div>
+                </div>
+            </section>
+            <section id="projets" class="section">
+                <div class="container">
+                    <h2 class="section-title">Mes Projets</h2>
+                    <div class="skills-grid" id="SK-projets">
+                       
+                    </div>
+                </div>
+            </section>
+            <section id="competences" class="section">
+                <div class="container">
+                    <h2 class="section-title">Mes Compétences</h2>
+                    <div class="skills-grid" id="SK-competences">
+ 
+                    </div>
+                </div>
+            </section>
+            <section id="parcours" class="section">
+                <div class="container">
+                    <h2 class="section-title">Mon Parcours Professionnel</h2>
+                    <div class="timeline" id="timeline_experience">
+                    </div>
+                </div>
+            </section>
+            <section id="objectifs" class="section">
+                <div class="container">
+                    <h2 class="section-title" >Mes Objectifs Futurs</h2>
+                    <ul class="objectives-list" id="list_objectives">
+                        <li>Devenir Scrum Master</li>
+                        <li>Transmettre, participer à l'évolution de l'équipe pour augmenter la qualité des livrables</li>
+                        <li>Augmenter ma maîtrise de Jira en condition opérationnelle, l'utiliser pour gérer l'automatisation et le CI </li>
+						<li>Devenir formateur logiciel</li>
+                    </ul>
+                </div>
+            </section>
+            <div id="courseModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2 id="courseTitle"></h2>
+                    <div id="courseContent"></div>
+                </div>
+            </div>
+        </main>
+        <div class="fab">
+            <i class="fas fa-arrow-up"></i>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+         <script src="https://unpkg.com/scrollreveal"></script> 
+        <!-- <script src="https://kit.fontawesome.com/your-fontawesome-kit.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+		<script src="./web/scripts.js"></script> 
+    </body>
+</html>

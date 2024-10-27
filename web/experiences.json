@@ -1,0 +1,49 @@
+[
+  {
+    "startYear": "2024",
+    "endYear": "2022",
+    "position": "Auto - Entrepreneur",
+    "tasks": [
+      "Création d'une activité de développement informatique",
+      "Formation : commercial, administratif, calcul de la VMC, positionnement de mon projet",
+      "Réalisation d'une solution de création d'application 3 pour les bureaux d'études"
+    ]
+  },
+  {
+    "startYear": "2022",
+    "endYear": "2009",
+    "position": "Developpeur Java (framework proprietaire) / Oracle / Linux",
+    "tasks": [
+      "Responsable TMA niv 1,2 et 3, Administration Base de Données",
+      "Développment des  flux inter-applicatifs comptables",
+      "Réalisation d'une application de gestion de planning de production de vaccins, dont l'objectif était de réduire et d'optimiser le temps de stockage des vaccins.",
+      "Animateur de formation initiation, perfectionnement, administration application maison"
+    ]
+  },
+  {
+    "startYear": "2009",
+    "endYear": "2007",
+    "position": "Développment en C# / Oracle / Windows",
+    "tasks": [
+      "Réalisation  flux inter-applicatifs entre l’application et le S.I. de la Sté."
+    ]
+  },
+  {
+    "startYear": "2007",
+    "endYear": "2001",
+    "position": "Développeur C / isam / Linux",
+    "tasks": [
+      "Développment d'une application pour gestion de planning, des budgets et des côuts",
+      "Développment des flux inter-applicatifs  transport et affrêtement"
+    ]
+  },
+  {
+    "startYear": "2001",
+    "endYear": "1999",
+    "position": "Développeur VB6 / Access / Windows",
+    "tasks": [
+      "Développment d'une application pour gestion des beaux et loyés et charges",
+      "Administration bas de données Oracle"
+    ]
+  }
+]
