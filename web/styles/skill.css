@@ -59,6 +59,13 @@ header {
    
 }
 
+.icone {
+    width:100px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    position: absolute;;
+}
 .skill-card {
     background-color: rgb(140, 207, 119,0);
     border-radius: 10px;

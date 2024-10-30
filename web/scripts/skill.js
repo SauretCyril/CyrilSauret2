@@ -14,22 +14,7 @@ function loadSkills() {
         .then(response => response.json())
         .then(data => {
             data.forEach(skill => {
-                console.log(skill.description);
-                const skillCard = document.createElement('div');
-               
-                skillCard.className = 'skill-card floating';
-                skillCard.setAttribute('data-tilt', '');
-                skillCard.setAttribute('data-tilt-max', '10');
-                
-                    skillCard.innerHTML = `
-                    <div class="skill-icon">
-                        <img src="${skill.icon}" alt="${skill.type} logo">
-                    </div>
-                    <p>${skill.type}</p>
-                    `;
-                    skillCard.onclick = () => {
-                        setSlide(skill.url);
-                      };
+                skillCard= addOneSkill(skill);
 
                 skillsContainer.appendChild(skillCard);
             });
@@ -43,7 +28,7 @@ function loadSkills() {
         .catch(error => console.error('Error loading skills:', error));
 }
 
-/* 
+
 function addOneSkill(skill) {
     console.log(skill.description);
     const skillCard = document.createElement('div');
@@ -53,17 +38,17 @@ function addOneSkill(skill) {
     skillCard.setAttribute('data-tilt-max', '10');
     
         skillCard.innerHTML = `
-        <div class="skill-icon">
+        <div class="skill-icon id='${skill.type}'">
             <img src="${skill.icon}" alt="${skill.type} logo">
         </div>
         <p>${skill.type}</p>
         `;
         skillCard.onclick = () => {
-            setSlide(skill.url);
+            setSlide(skill.url,skill);
           };
-
-    skillsContainer.appendChild(skillCard);
-} */
+    return  skillCard;
+    
+} 
 
 function fetchQuote() {
     const quotes = ["Il y a 10 types de personnes dans le monde : ceux qui comprennent le binaire et ceux qui ne le comprennent pas.", "Un programmeur est une machine qui transforme le café en code.", "Je ne suis pas antisocial, je suis juste en mode débogage.", "Pourquoi les programmeurs préfèrent-ils la nuit ? Parce que le temps de compilation est plus court.", "Le code, c'est comme l'humour. Quand on doit l'expliquer, c'est mauvais."];

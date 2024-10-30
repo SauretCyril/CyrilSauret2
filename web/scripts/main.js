@@ -106,9 +106,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
   
 });
 
-function setSlide (slide) { 
-  window.current_article=slide;
+function setSlide (slideId,slideObj) { 
+  window.current_article=slideId;
   const hero = document.getElementById('hero');
   const article = document.getElementById(window.current_article).innerHTML;
+  
   hero.innerHTML=article;
+  icone=addOneSkill(slideObj);
+  document.querySelector('.icone').appendChild(icone);
+
 } 
