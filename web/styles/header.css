@@ -20,12 +20,12 @@
   }
   
   .header-logo {
-    height: 50px;
+    height:100px;
     width: auto;
+    padding-top: 10px;
   }
   
-  
-  
+    
   .contact-info {
     font-size: 1.1em;
     color: var(--dark-color);

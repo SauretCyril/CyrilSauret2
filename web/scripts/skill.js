@@ -1,49 +1,4 @@
-document.addEventListener('DOMContentLoaded', (event) => {
-   
-   
-    const courseButtons = document.querySelectorAll(".course-btn");
-    const courseTitle = document.getElementById("courseTitle");
-    const courseContent = document.getElementById("courseContent");
-  
-    const skillCards = document.querySelectorAll('.skill-card');
-    skillCards.forEach(card => {
-        card.addEventListener('mouseover', () => {
-            card.style.transform = 'scale(1.1) rotate(5deg)';
-        });
-        card.addEventListener('mouseout', () => {
-            card.style.transform = 'scale(1) rotate(0deg)';
-        });
-    });
- 
-    function fetchQuote() {
-        const quotes = ["Il y a 10 types de personnes dans le monde : ceux qui comprennent le binaire et ceux qui ne le comprennent pas.", "Un programmeur est une machine qui transforme le café en code.", "Je ne suis pas antisocial, je suis juste en mode débogage.", "Pourquoi les programmeurs préfèrent-ils la nuit ? Parce que le temps de compilation est plus court.", "Le code, c'est comme l'humour. Quand on doit l'expliquer, c'est mauvais."];
-        const quoteContent = document.getElementById('quote-content');
-        const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-        quoteContent.textContent = randomQuote;
-    }
-  
-    setInterval(fetchQuote, 10000);
-   
-    
-    const animatedElements = document.querySelectorAll('.skill-card, .section-title, .objectives-list li');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-fadeInUp');
-            }
-        });
-    }, {threshold: 0.1});
-    animatedElements.forEach(element => {
-        observer.observe(element);
-    });
-  
 
-    // loadExperiences();
-    loadSkills();
-    // loadProjects();
-    //smoothScroll();
-    fetchQuote();
-});
 
 
 function loadSkills() {
@@ -105,3 +60,15 @@ function fetchQuote() {
             headerLogo.style.filter = 'none';
         }
     });
+
+VanillaTilt.init(document.querySelectorAll(".skill-card"), {
+     max: 10,
+    speed: 400,
+    glare: true,
+        "max-glare": 0.3,
+});
+    
+VanillaTilt.init(document.querySelectorAll(".floating"), {
+    max: 10,
+    speed: 400
+});
