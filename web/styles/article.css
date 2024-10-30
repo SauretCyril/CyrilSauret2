@@ -1,22 +1,32 @@
 
 /* Article Styles */
 .article {
+    height: 100vh;
     display: none;
     animation: fadeIn 0.5s ease;
+    height: 100%;
+    width: 100%;
+    
   }
+ 
   
   .article.active {
     display: block;
   }
   
   .article-header {
+    margin-top: 7%;
     margin-bottom: 2rem;
+    height: 80px;
+    background-color: var(--article-title);
   }
   
   .article-title {
-    color: var(--primary-color);
+    
+    color: var(--dark-color);
     font-size: 2.5rem;
     margin-bottom: 1rem;
+    text-align: center;
   }
   
   .article-content {
@@ -24,7 +34,7 @@
   }
   
   .article-image {
-    width: 100%;
+   
     border-radius: 8px;
     margin: 2rem 0;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);

@@ -44,26 +44,25 @@ header {
     align-items: center;
 }
 
-.logo img {
-    max-height: 50px;
-    width: auto;
-    vertical-align: middle;
-}
 
 
 
 
 
 .skills-grid  {
+   
+    /* grid-template-columns: repeat(auto-fit, minmax(15px, 1fr)); */
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15px, 1fr));
-    gap: 10px;
+    /* grid-template-columns: repeat(2, 1fr); */ /* Deux colonnes de largeur égale */
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Minimum 1 colonne, maximum 2 colonnes */
+    gap: 16px; /* Espace entre les éléments, ajustez selon vos besoins */
+   
 }
 
 .skill-card {
     background-color: rgb(140, 207, 119,0);
     border-radius: 10px;
-    padding: 30px;
+    padding: 20px;
     text-align: center;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
@@ -100,6 +99,7 @@ header {
 .skill-card:hover {
     transform: translateY(-10px) scale(1.05);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    cursor:alias;
 }
 
 .skill-icon img {

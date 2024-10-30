@@ -1,54 +1,110 @@
-
 /* Header Styles */
 .site-header {
     position: fixed;
     top: 0;
     left: 250px;
     right: 250px;
-    height: 80px;
+    height: 20%;
     background-color: var(--light-color);
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     z-index: 99;
-  }
-  
-  .header-content {
+    border-bottom: 1px solid #000; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.site-header img {
+    max-height: 50%;
+    height: 70%;
+    width: auto;
+}
+
+.site-header .header-text {
+    font-size: 1.5rem;
+    color: var(--dark-color);
+}
+
+.header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 100%;
     padding: 0 2rem;
-  }
-  
-  .header-logo {
+}
+
+.header-logo {
     height:100px;
     width: auto;
     padding-top: 10px;
-  }
-  
-    
-  .contact-info {
-    font-size: 1.1em;
-    color: var(--dark-color);
-  }
-  
-  .contact-info i {
+   
+}
+
+/* .contact-info {
+  font-size: 1.1em;
+  color: var(--dark-color);
+  margin-left:auto; 
+
+}*/
+
+.contact-info {
+  font-size: 1.1em;
+  color: var(--dark-color);
+  position: absolute; /* Positionnement absolu */
+  right:10px; /* Coller au bord droit */
+  top: 50%; /* Centrer verticalement */
+  transform: translateY(-50%); /* Centrer verticalement */
+}
+
+
+.contact-info i {
     color: var(--primary-color);
     margin-right: 0.5rem;
-  }
-  
-  .ml-3 {
+}
+
+.ml-3 {
     margin-left: 1rem;
-  }
-  
-  
-  .javascript-logo {
+}
+
+.javascript-logo {
     width: 64px;
     height: 64px;
     fill: #f7df1e;
     animation: jsRotate 10s linear infinite;
-  }
-  
-  .skill-card:hover .javascript-logo {
+}
+
+.skill-card:hover .javascript-logo {
     animation-duration: 2s;
-  }
-  
+}
+
+/* Media queries pour les petits écrans */
+@media (max-width: 768px) {
+    .site-header {
+        left: 0;
+        right: 0;
+        height: 100px;
+        padding: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .site-header img {
+        max-height: 50px;
+    }
+
+    .site-header .header-text {
+        font-size: 1.2rem;
+    }
+}
+
+/* Media queries pour les très petits écrans */
+@media (max-width: 480px) {
+    .site-header .header-text {
+        font-size: 1rem;
+    }
+
+    .site-header img {
+        max-height: 40px;
+    }
+}

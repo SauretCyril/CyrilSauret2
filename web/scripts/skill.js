@@ -20,13 +20,16 @@ function loadSkills() {
                 skillCard.className = 'skill-card floating';
                 skillCard.setAttribute('data-tilt', '');
                 skillCard.setAttribute('data-tilt-max', '10');
-
-                skillCard.innerHTML = `
+                
+                    skillCard.innerHTML = `
                     <div class="skill-icon">
                         <img src="${skill.icon}" alt="${skill.type} logo">
                     </div>
                     <p>${skill.type}</p>
                     `;
+                    skillCard.onclick = () => {
+                        setSlide(skill.url);
+                      };
 
                 skillsContainer.appendChild(skillCard);
             });
@@ -40,6 +43,27 @@ function loadSkills() {
         .catch(error => console.error('Error loading skills:', error));
 }
 
+/* 
+function addOneSkill(skill) {
+    console.log(skill.description);
+    const skillCard = document.createElement('div');
+   
+    skillCard.className = 'skill-card floating';
+    skillCard.setAttribute('data-tilt', '');
+    skillCard.setAttribute('data-tilt-max', '10');
+    
+        skillCard.innerHTML = `
+        <div class="skill-icon">
+            <img src="${skill.icon}" alt="${skill.type} logo">
+        </div>
+        <p>${skill.type}</p>
+        `;
+        skillCard.onclick = () => {
+            setSlide(skill.url);
+          };
+
+    skillsContainer.appendChild(skillCard);
+} */
 
 function fetchQuote() {
     const quotes = ["Il y a 10 types de personnes dans le monde : ceux qui comprennent le binaire et ceux qui ne le comprennent pas.", "Un programmeur est une machine qui transforme le café en code.", "Je ne suis pas antisocial, je suis juste en mode débogage.", "Pourquoi les programmeurs préfèrent-ils la nuit ? Parce que le temps de compilation est plus court.", "Le code, c'est comme l'humour. Quand on doit l'expliquer, c'est mauvais."];
@@ -72,3 +96,4 @@ VanillaTilt.init(document.querySelectorAll(".floating"), {
     max: 10,
     speed: 400
 });
+

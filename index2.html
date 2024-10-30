@@ -21,15 +21,21 @@
 
 <header class="site-header">
   <div class="header-content">
+    
     <div class="logo-container">
       <img src="/web/ressources/profile_2.png" alt="ExpoCenter Logo" class="header-logo">
+      <h1 class="hero-title" >Développeur - Testeur Polyvalent</h1>
+      <div class="quote-container">
+        <p id="quote-content">Chargement de la citation...</p>
+      </div>
     </div>
-    <div class="header-contact">
+    
+    <!-- <div class="header-contact"> -->
       <div class="contact-info">
         <i class="fas fa-phone"></i> +33 7 86 09 87 81
         <i class="fas fa-envelope ml-3"></i> sauretcyril@outlook.fr
       </div>
-    </div>
+   <!--  </div> -->
   </div>
 </header>
 
@@ -95,30 +101,9 @@
 </aside>
 
 <main class="main-content">
-  <section class="hero">
-    
-    <div class="hero-title">
-      <h1>Développeur - Testeur Polyvalent</h1>
-      <p></p>
-    </div>
-
-    <!-- <div class="hero-citation">
-      <p id="quote-content">"citation"</p>
-    </div> -->
-    <section  class="hero-citation">
-      <!-- <div class="container"> -->
-          
-          <div class="quote-container">
-              <p id="quote-content">Chargement de la citation...</p>
-          </div>
-      <!-- </div> -->
-  </section>
-
-
-
-    <div class="hero-slide active" style="background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://picsum.photos/1920/1080?random=1')"></div>
-    <div class="hero-slide" style="background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://picsum.photos/1920/1080?random=2')"></div>
-    <div class="hero-slide" style="background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://picsum.photos/1920/1080?random=3')"></div>
+  <section class="hero" id="hero">
+  
+   
   </section>
 
   <article id="congres" class="article">
@@ -139,9 +124,9 @@
   </article>
 
   <article id="salons" class="article">
-    <header class="article-header">
+    <div class="article-header">
       <h1 class="article-title">Salons & Expositions</h1>
-    </header>
+    </div>
     <div class="article-content">
       <img src="https://picsum.photos/800/400?random=8" alt="Espace d'exposition" class="article-image">
       <p>Nos espaces d'exposition offrent plus de 5000m² modulables pour accueillir tous types de salons professionnels ou grand public. Hauteur sous plafond exceptionnelle et accès facilité pour les exposants.</p>
@@ -155,10 +140,20 @@
     </div>
   </article>
 
+  <article id="slide-photo" class="article">
+    <
+      <div class="hero-slide active" style="background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://picsum.photos/1920/1080?random=1')"></div>
+      <div class="hero-slide" style="background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://picsum.photos/1920/1080?random=2')"></div>
+      <div class="hero-slide" style="background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://picsum.photos/1920/1080?random=3')"></div>
+    
+  </article>
+
+
+
   <article id="sports" class="article">
-    <header class="article-header">
-      <h1 class="article-title">Événements Sportifs</h1>
-    </header>
+    <div class="article-header">
+      <h1 class="article-title">Compétence en python</h1>
+    </div>
     <div class="article-content">
       <img src="https://picsum.photos/800/400?random=9" alt="Événement sportif" class="article-image">
       <p>Notre centre peut accueillir de nombreuses disciplines sportives indoor. Les espaces sont adaptables pour les compétitions, démonstrations et entrainements.</p>

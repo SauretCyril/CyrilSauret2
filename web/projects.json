@@ -1,9 +1,9 @@
 [
   {
-    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-    "name": "Gestion d'Url",
-    "description": "Simple gestionnaire d'url, car les navigateurs ne permettent pas de gérer les onglets de façon satisfaisante",
-    "url": "#"
+    "icon": "./web/ressources/Logo_Dept_octobre_rose.png",
+    "name": "Site DEPT",
+    "description": "Réalisation du Site de l'association découverte en pays de Tarare",
+    "url": "#sports"
   },
   {
     "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",

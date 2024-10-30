@@ -1,0 +1,655 @@
+<html><head><base href="." /><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>ExpoCenter - Centre d'exposition et d'événements</title><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" /><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" /><style>
+:root {
+  --primary-color: #38a9c7;
+  --secondary-color: #f8a51d;
+  --dark-color: #212121;
+  --light-color: #ffffff;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  padding: 2rem 1rem;
+  z-index: 100;
+  width: 250px;
+  transition: transform 0.3s ease;
+}
+
+.sidebar-left {
+  left: 0;
+}
+
+.sidebar-right {
+  right: 0;
+}
+
+.nav-menu {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+.nav-item {
+  margin: 1rem 0;
+}
+
+.nav-link {
+  color: var(--light-color);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  display: block;
+  padding: 0.5rem 1rem;
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+}
+
+/* Submenu Styles */
+.submenu {
+  display: none;
+  margin-left: 2rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--primary-color);
+}
+
+.nav-item.active .submenu {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+.submenu-item {
+  padding: 0.5rem 0;
+}
+
+.submenu-link {
+  color: var(--light-color);
+  text-decoration: none;
+  font-size: 0.9em;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.submenu-link:hover {
+  color: var(--primary-color);
+  padding-left: 0.5rem;
+}
+
+.submenu-icon {
+  margin-right: 0.5rem;
+  width: 20px;
+  text-align: center;
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 250px;
+  margin-right: 250px;
+  padding: 2rem;
+  margin-top: 80px; /* Adjust main content to account for header */
+}
+
+.hero {
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
+  width: 100%;
+  color: var(--dark-color);
+  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+  padding: 2rem;
+  border-radius: 8px;
+  backdrop-filter: blur(5px); /* Optional: adds a slight blur effect */
+}
+
+.hero-title h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.hero-title p {
+  font-size: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.hero-citation {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--primary-color);
+  margin-top: 0.5rem;
+  font-weight: 300;
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.7); /* Make images slightly darker */
+  background-blend-mode: overlay;
+}
+
+.hero-slide.active {
+  opacity: 1;
+}
+
+.hero-slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+}
+
+/* Cards and Sections */
+.section {
+  padding: 4rem 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--dark-color);
+}
+
+.card {
+  background: var(--light-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* Article Styles */
+.article {
+  display: none;
+  animation: fadeIn 0.5s ease;
+}
+
+.article.active {
+  display: block;
+}
+
+.article-header {
+  margin-bottom: 2rem;
+}
+
+.article-title {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.article-content {
+  line-height: 1.8;
+}
+
+.article-image {
+  width: 100%;
+  border-radius: 8px;
+  margin: 2rem 0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Header Styles */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 250px;
+  right: 250px;
+  height: 80px;
+  background-color: var(--light-color);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 99;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 2rem;
+}
+
+.header-logo {
+  height: 50px;
+  width: auto;
+}
+
+.contact-info {
+  font-size: 1.1em;
+  color: var(--dark-color);
+}
+
+.contact-info i {
+  color: var(--primary-color);
+  margin-right: 0.5rem;
+}
+
+.ml-3 {
+  margin-left: 1rem;
+}
+
+/* Footer Styles */
+.site-footer {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  padding: 3rem 0;
+  margin-left: 250px;
+  margin-right: 250px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 0 1rem;
+}
+
+.footer-section h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+  color: var(--light-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: var(--primary-color);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+</style></head><body>
+
+<header class="site-header">
+  <div class="header-content">
+    <div class="logo-container">
+      <img src="https://picsum.photos/100/50" alt="ExpoCenter Logo" class="header-logo">
+    </div>
+    <div class="header-contact">
+      <div class="contact-info">
+        <i class="fas fa-phone"></i> +33 4 74 62 07 49
+        <i class="fas fa-envelope ml-3"></i> contact@expocenter.fr
+      </div>
+    </div>
+  </div>
+</header>
+
+<aside class="sidebar sidebar-left">
+  <svg class="logo" viewBox="0 0 200 80" style="width: 100%; height: auto;">
+    <text x="10" y="50" fill="white" font-size="24">ExpoCenter</text>
+  </svg>
+  <nav>
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a href="#organiser" class="nav-link">
+          <i class="fas fa-calendar-plus"></i> Organiser
+        </a>
+        <ul class="submenu">
+          <li class="submenu-item">
+            <a href="#congres" class="submenu-link" data-article="congres">
+              <i class="fas fa-microphone submenu-icon"></i>
+              Congrès & Conférences
+            </a>
+          </li>
+          <li class="submenu-item">
+            <a href="#salons" class="submenu-link" data-article="salons">
+              <i class="fas fa-booth submenu-icon"></i>
+              Salons & Expositions
+            </a>
+          </li>
+          <li class="submenu-item">
+            <a href="#sports" class="submenu-link" data-article="sports">
+              <i class="fas fa-running submenu-icon"></i>
+              Événements Sportifs
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a href="#visiter" class="nav-link">
+          <i class="fas fa-walking"></i> Visiter
+        </a>
+        <ul class="submenu">
+          <li class="submenu-item">
+            <a href="#espaces" class="submenu-link" data-article="espaces">
+              <i class="fas fa-building submenu-icon"></i>
+              Nos Espaces
+            </a>
+          </li>
+          <li class="submenu-item">
+            <a href="#acces" class="submenu-link" data-article="acces">
+              <i class="fas fa-map-marker-alt submenu-icon"></i>
+              Accès & Parking
+            </a>
+          </li>
+          <li class="submenu-item">
+            <a href="#services" class="submenu-link" data-article="services">
+              <i class="fas fa-concierge-bell submenu-icon"></i>
+              Services
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a href="#exposer" class="nav-link">
+          <i class="fas fa-booth"></i> Exposer
+        </a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+
+<aside class="sidebar sidebar-right">
+  <nav>
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a href="#organiser" class="nav-link">
+          <i class="fas fa-calendar-plus"></i> Organiser
+        </a>
+        <ul class="submenu">
+          <li class="submenu-item">
+            <a href="#congres" class="submenu-link" data-article="congres">
+              <i class="fas fa-microphone submenu-icon"></i>
+              Congrès & Conférences
+            </a>
+          </li>
+          <li class="submenu-item">
+            <a href="#salons" class="submenu-link" data-article="salons">
+              <i class="fas fa-booth submenu-icon"></i>
+              Salons & Expositions
+            </a>
+          </li>
+          <li class="submenu-item">
+            <a href="#sports" class="submenu-link" data-article="sports">
+              <i class="fas fa-running submenu-icon"></i>
+              Événements Sportifs
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  
+  <div class="social-links mt-4">
+    <h4 class="text-center">Suivez-nous</h4>
+    <div class="d-flex justify-content-center gap-3">
+      <a href="#" class="nav-link"><i class="fab fa-facebook"></i></a>
+      <a href="#" class="nav-link"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="nav-link"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div>
+</aside>
+
+<main class="main-content">
+  <section class="hero">
+    <div class="hero-title">
+      <h1>ExpoCenter</h1>
+      <p>Centre d'exposition et d'événements à Villefranche-sur-Saône</p>
+      <p class="hero-citation">"L'excellence au service de vos événements"</p>
+    </div>
+    <div class="hero-slide active" style="background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://picsum.photos/1920/1080?random=1')"></div>
+    <div class="hero-slide" style="background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://picsum.photos/1920/1080?random=2')"></div>
+    <div class="hero-slide" style="background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://picsum.photos/1920/1080?random=3')"></div>
+  </section>
+
+  <article id="congres" class="article">
+    <header class="article-header">
+      <h1 class="article-title">Congrès & Conférences</h1>
+    </header>
+    <div class="article-content">
+      <img src="https://picsum.photos/800/400?random=7" alt="Salle de congrès" class="article-image">
+      <p>Organisez vos congrès et conférences dans nos espaces modernes et modulables. Nos salles sont équipées des dernières technologies audiovisuelles et peuvent accueillir de 50 à 1000 personnes.</p>
+      <ul>
+        <li>Amphithéâtre de 1000 places</li>
+        <li>Salles de sous-commission</li>
+        <li>Équipement audiovisuel haute définition</li>
+        <li>Connexion WiFi haut débit</li>
+        <li>Espaces de restauration</li>
+      </ul>
+    </div>
+  </article>
+
+  <article id="salons" class="article">
+    <header class="article-header">
+      <h1 class="article-title">Salons & Expositions</h1>
+    </header>
+    <div class="article-content">
+      <img src="https://picsum.photos/800/400?random=8" alt="Espace d'exposition" class="article-image">
+      <p>Nos espaces d'exposition offrent plus de 5000m² modulables pour accueillir tous types de salons professionnels ou grand public. Hauteur sous plafond exceptionnelle et accès facilité pour les exposants.</p>
+      <ul>
+        <li>Surface totale de 5000m²</li>
+        <li>Halls modulables</li>
+        <li>Accès logistique optimisé</li>
+        <li>Alimentation électrique adaptée</li>
+        <li>Parking exposants dédié</li>
+      </ul>
+    </div>
+  </article>
+
+  <article id="sports" class="article">
+    <header class="article-header">
+      <h1 class="article-title">Événements Sportifs</h1>
+    </header>
+    <div class="article-content">
+      <img src="https://picsum.photos/800/400?random=9" alt="Événement sportif" class="article-image">
+      <p>Notre centre peut accueillir de nombreuses disciplines sportives indoor. Les espaces sont adaptables pour les compétitions, démonstrations et entrainements.</p>
+      <ul>
+        <li>Surface adaptée aux sports collectifs</li>
+        <li>Gradins mobiles</li>
+        <li>Vestiaires équipés</li>
+        <li>Sonorisation professionnelle</li>
+        <li>Éclairage adapté aux retransmissions</li>
+      </ul>
+    </div>
+  </article>
+
+  <article id="espaces" class="article">
+    <header class="article-header">
+      <h1 class="article-title">Nos Espaces</h1>
+    </header>
+    <div class="article-content">
+      <img src="https://picsum.photos/800/400?random=4" alt="Nos espaces" class="article-image">
+      <p>Découvrez nos différents espaces conçus pour répondre à tous vos besoins :</p>
+      <ul>
+        <li>Hall principal de 5000m²</li>
+        <li>Amphithéâtre de 1000 places</li>
+        <li>Salles de réunion modulables</li>
+        <li>Espaces de restauration</li>
+        <li>Terrasse panoramique</li>
+      </ul>
+    </div>
+  </article>
+
+  <article id="acces" class="article">
+    <header class="article-header">
+      <h1 class="article-title">Accès & Parking</h1>
+    </header>
+    <div class="article-content">
+      <img src="https://picsum.photos/800/400?random=5" alt="Plan d'accès" class="article-image">
+      <p>Notre centre est facilement accessible :</p>
+      <ul>
+        <li>Parking gratuit de 1000 places</li>
+        <li>Accès direct autoroute</li>
+        <li>Navettes depuis la gare</li>
+        <li>Station de taxi</li>
+        <li>Bornes de recharge électrique</li>
+      </ul>
+    </div>
+  </article>
+
+  <article id="services" class="article">
+    <header class="article-header">
+      <h1 class="article-title">Services</h1>
+    </header>
+    <div class="article-content">
+      <img src="https://picsum.photos/800/400?random=6" alt="Nos services" class="article-image">
+      <p>Nous proposons une gamme complète de services :</p>
+      <ul>
+        <li>WiFi gratuit haut débit</li>
+        <li>Service de restauration</li>
+        <li>Vestiaire surveillé</li>
+        <li>Assistance technique</li>
+        <li>Conciergerie</li>
+      </ul>
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>ExpoCenter</h3>
+      <p>221 Avenue de l'Europe<br>
+         69400 Villefranche-sur-Saône</p>
+    </div>
+    <div class="footer-section">
+      <h3>Contact</h3>
+      <p>Tel: +33 4 74 62 07 49<br>
+         Email: contact@expocenter.fr</p>
+    </div>
+    <div class="footer-section">
+      <h3>Liens Utiles</h3>
+      <ul>
+        <li><a href="#">Mentions légales</a></li>
+        <li><a href="#">Plan du site</a></li>
+        <li><a href="#">Politique de confidentialité</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2024 ExpoCenter - Tous droits réservés</p>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+  // Slideshow functionality
+  function nextSlide() {
+    const $active = $('.hero-slide.active');
+    const $next = $active.next('.hero-slide').length ? $active.next('.hero-slide') : $('.hero-slide').first();
+    $active.removeClass('active');
+    $next.addClass('active');
+  }
+  
+  setInterval(nextSlide, 5000);
+  
+  // Toggle submenu - Updated with error handling
+  $('.nav-link').on('click', function(e) {
+    e.preventDefault(); // Prevent default for all nav links
+    const $parent = $(this).closest('.nav-item');
+    
+    if($parent.length && $parent.find('.submenu').length) {
+      $('.nav-item').not($parent).removeClass('active');
+      $parent.toggleClass('active');
+    }
+  });
+  
+  // Handle submenu article display - Updated with error handling
+  $('.submenu-link').on('click', function(e) {
+    e.preventDefault();
+    
+    const articleId = $(this).data('article');
+    if(!articleId) return; // Guard clause
+    
+    // Hide all articles and show target article
+    $('.article').removeClass('active');
+    $('#' + articleId).addClass('active');
+    
+    // Hide hero section
+    $('.hero').hide();
+    
+    // Smooth scroll with error handling
+    const $target = $('#' + articleId);
+    if($target.length) {
+      $('html, body').animate({
+        scrollTop: $target.offset().top
+      }, 800);
+    }
+  });
+  
+  // Show hero and hide articles when clicking main nav - Updated
+  $('.nav-link').on('click', function(e) {
+    const $submenu = $(this).closest('.nav-item').find('.submenu');
+    if(!$submenu.length) {
+      $('.article').removeClass('active');
+      $('.hero').show();
+    }
+  });
+});
+</script></body></html>

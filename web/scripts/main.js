@@ -1,3 +1,5 @@
+window.current_article="slide-photo";
+
 $(document).ready(function() {
   // Slideshow functionality
   function nextSlide() {
@@ -99,4 +101,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
   loadProjects();
   //smoothScroll();
   fetchQuote();
+  setSlide("slide-photo");
+  //setSlide("congres");
+  
 });
+
+function setSlide (slide) { 
+  window.current_article=slide;
+  const hero = document.getElementById('hero');
+  const article = document.getElementById(window.current_article).innerHTML;
+  hero.innerHTML=article;
+} 

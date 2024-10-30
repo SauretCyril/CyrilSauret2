@@ -1,5 +1,5 @@
 
-.hero-citation {
+.hero-citation.old {
     position: absolute;
     top: 80%;
     left: 60%;
@@ -19,17 +19,18 @@
     /* background-color: var(--bg-color); */
     border-radius: 10px;
     padding: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: right;
+    margin-bottom: 10px;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    text-align: center;
     width: 100%;
 }
 
 .quote-container p {
-    color:rgb(255, 238, 0);
+    color:var(--dark-color);
     font-size: 20px;
     font-weight:bolder;
     font-style:italic;
-    margin: 0;
+    /* margin: 0; */
     /* white-space: nowrap; */
     overflow: hidden;
     text-overflow: ellipsis;
