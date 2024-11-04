@@ -101,18 +101,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
   loadProjects();
   //smoothScroll();
   fetchQuote();
-  setSlide("slide-photo");
+  goHome();
   //setSlide("congres");
   
 });
 
-function setSlide (slideId,slideObj) { 
-  window.current_article=slideId;
-  const hero = document.getElementById('hero');
-  const article = document.getElementById(window.current_article).innerHTML;
-  
-  hero.innerHTML=article;
-  icone=addOneSkill(slideObj);
-  document.querySelector('.icone').appendChild(icone);
 
-} 
+function goHome() {
+  document.getElementById('hero').innerHTML=`
+        <div class="hero-slide active" style="background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://picsum.photos/1920/1080?random=1')"></div>
+      <div class="hero-slide" style="background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://picsum.photos/1920/1080?random=2')"></div>
+      <div class="hero-slide" style="background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://picsum.photos/1920/1080?random=3')"></div>
+    `;
+  
+}

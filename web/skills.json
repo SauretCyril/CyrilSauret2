@@ -3,12 +3,14 @@
     "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
     "type": "Python",
     "description": "Utilisation du python pour la gestion des data",
-    "url": "sports"
+    "id": "skill-python",
+    "title": "Mes compétences en Python"
   },
   {
     "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
     "type": "JavaScript",
     "description": "Développement front-end et back-end avec JavaScript",
-    "url": "#"
+    "id": "skill-javascript",
+    "title": "Mes compétences en Javacript"
   }
 ]
