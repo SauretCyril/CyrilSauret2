@@ -36,11 +36,6 @@ body {
   right: 0;
 }
 
-.logo img {
-  max-height: 50px;
-  width: auto;
-  vertical-align: middle;
-}
 
 
 /* Main Content */
@@ -58,35 +53,6 @@ body {
   position: relative;
   overflow: hidden;
   margin: top 10%;
-}
-
-.hero-title {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  text-align: center;
-  width: 100%;
-  color: var(--dark-color);
-  /* background-color: rgba(255, 255, 255, 0.2); */ /* Semi-transparent white background */
-  padding: 2rem;
-  border-radius: 8px;
-  /* backdrop-filter: blur(5px); */ /* Optional: adds a slight blur effect */
-}
-
-
-.hero-title h1 {
-  font-size: 1rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-}
-
-.hero-title p {
-  font-size: 1.5rem;
-  max-width: 600px;
-  margin: 0 auto;
 }
 
 
@@ -124,5 +90,43 @@ body {
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .main-content {
+        padding: 0;
+    }
+
+    .article {
+        padding: 10px;
+    }
+
+    .article-header h1 {
+        font-size: 1.2rem; /* Reduced font size */
+    }
+
+    .article-content img {
+        width: 100%;
+        height: auto;
+    }
+
+    .hero-citation {
+        font-size: 1rem; /* Reduced font size */
+    }
 }
 
