@@ -5,7 +5,7 @@
   --light-color: #ffffff;
   --citation-color:var(--dark-color);
   --article-title: var( #e0832b);
-  
+  --bg-citation:#ffffff57;
 }
 
 body {

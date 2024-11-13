@@ -6,8 +6,7 @@
     text-align: center;
     color: white; 
     font-size: 1em;
-    /* margin-bottom: 50px; */
-    /* position: relative; */
+   
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -17,5 +16,5 @@
     width: 50px;
     height: 3px;
     background-color: var(--accent-color);
-    margin: 20px auto 0;
+    /* margin: 20px auto 0; */
 }
