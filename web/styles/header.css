@@ -5,53 +5,83 @@
     top: 0;
     left: 20%;
     right: 20%;
-    height: 22%;
+    height: 15%;
     background-color: var(--light-color);
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     z-index: 99;
     border-bottom: 1px solid #000; 
     /* display: flex; */
-   /*  align-items: center;
-    justify-content: space-between; */
-    padding: 10px 20px;
+   /*  align-items: center;*/
+    justify-content: space-between;
+    /* gap: 20px; */
+    padding: 0px 0px;
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start  ;
+}
+.header-content {
+    display: flex;
+    direction :column;
+    /* justify-content: space-between; */
+    align-items: center; 
+    height: 100%;
+    /* padding: 0 2rem; */
+    margin-bottom: 5px; /* Add some space below the header content */
+    
 }
 
-    .header-content {
+.quote-container {
+    background-color: var(--bg-citation); 
+    text-align: center;
+    width: 100%; 
+    
+}
+    .logo-contenaire{
         display: flex;
-        direction :column;
-        /* justify-content: space-between; */
-        /* align-items: center; */
-        height: 100%;
-        /* padding: 0 2rem; */
-        margin-bottom: 5px; /* Add some space below the header content */
-        
-    } 
-
-       /*  .logo-container{
-            display:inline;
-            direction:column;
-        } */
-
-            .header-logo {
-                height:30%;
-                width: auto;
-            }
-            .hero-title {
-             
-                text-align: center;
-                width: 100%;
-                color: var(--dark-color);
-               font-size: 1.5em;
-                border-radius: 8px;
-               
-         
-            }
-
-    .quote-container {
-        background-color: var(--bg-citation); 
-        text-align: center;
-        width: 100%;
+        flex-direction:column;
     }
+        .name {
+            font-size: 1em;
+            color: var(--dark-color);
+            font-weight: bold;
+            text-align: center;
+            margin: 0;
+        }
+        .logo{
+            height:90px;
+            max-height: 90px;
+            min-height: 50px;
+            width: auto;
+        }
+       
+        .portfolio-title { 
+            text-align: center;
+            width: 100%;
+            color: var(--dark-color);
+            font-size: 1.5em;
+            border-radius: 8px;
+        }
+
+        .contact-info {
+            font-size: 1.1em;
+            color: var(--dark-color);
+            text-align: center;
+          
+           /*  display: flex;
+            flex-direction: row;
+            align-items: center; */
+          }
+    
+
+  
+  .contact-info i {
+      color: var(--primary-color);
+      /* margin-right: 0.5rem; */
+  }      
+
+
 
         .quote-container p {
             color:var(--dark-color);
@@ -65,21 +95,6 @@
         }
 
 
-.contact-info {
-  font-size: 1.1em;
-  color: var(--dark-color);
-  text-align: right;
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-
-
-.contact-info i {
-    color: var(--primary-color);
-    /* margin-right: 0.5rem; */
-}
 /* 
 .ml-3 {
     margin-left: 1rem;
