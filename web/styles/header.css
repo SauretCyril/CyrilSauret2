@@ -136,30 +136,5 @@
     /* margin: 0 auto; */
   }
 
-@media (max-width: 600px) {
-    .header-title {
-        font-size: 1.2rem;
-    }
-
-    .header-logo {
-        height: 50px;
-    }
-
-    .hero-title h1 {
-        font-size: 1.5rem;
-    }
-
-    .hero-title p {
-        font-size: 1rem;
-    }
-
-    .contact-info {
-        font-size: 0.9em;
-    }
-
-    .quote-container p {
-        font-size: 1rem;
-    }
-}
-
+ 
 
