@@ -23,6 +23,7 @@
         align-items: center;
         height: 100%;
         /* padding: 0 2rem; */
+        margin-bottom: 20px; /* Add some space below the header content */
         
     } 
 
@@ -136,5 +137,28 @@
     /* margin: 0 auto; */
   }
 
- 
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  
+      margin-top: 20px; /* Ensure some space above the main container */
+}
+
+.sidebar-left, .sidebar-right, .hero {
+    flex: 1;
+    margin: 0 10px;
+}
+
+/* Optional: Adjust the width of sidebars and hero section */
+.sidebar-left, .sidebar-right {
+    max-width: 20%;
+    min-width: 100px;
+} 
+
+.hero {
+    max-width: 60%;
+}
+
+
 
