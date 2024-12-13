@@ -3,18 +3,21 @@
     "icon": "./web/ressources/Logo_Dept_octobre_rose.png",
     "name": "Site DEPT",
     "description": "Réalisation du Site de l'association découverte en pays de Tarare",
-    "url": "#sports"
+    "url": "../web/articles/Ici3dN.html",
+    "id": "DEPT"
   },
   {
     "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
     "name": "Explorateur d'image local",
     "description": "Permettre de gérer nos photos en local",
-    "url": "#"
+    "url": "#",
+    "id": "ExpoImageLocal"
   },
   {
     "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
     "name": "Ici3Dn",
     "description": "Solution de création d'application en 3D pour les bureaux d'études",
-    "url": "#"
+    "url": "#",
+    "id": "Ici3Dn"
   }
 ]

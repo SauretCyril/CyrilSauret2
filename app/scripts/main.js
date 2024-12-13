@@ -73,8 +73,7 @@ const Menu = ({ setActiveArticle }) => {
   );
 };
 
-export default Slideshow;
-export { Menu };
+export { Slideshow, Menu };
 
 window.current_article="slide-photo";
 

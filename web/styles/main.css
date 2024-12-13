@@ -5,7 +5,7 @@
   --light-color: #ffffff;
   --citation-color:var(--dark-color);
   --article-title: var( #e0832b);
-  --bg-citation:#ffffff57;
+  --bg-citation:#ffffff00;
 }
 
 body {
@@ -83,6 +83,8 @@ body {
   background-blend-mode: overlay;
 }
 
+
+
 .hero-slide.active {
   opacity: 1;
  
@@ -90,7 +92,7 @@ body {
 
 .hero-slide::before {
   content: '';
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0px;
   right: 0;
@@ -99,11 +101,19 @@ body {
 }
 
 .container {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
     padding: 0 15px;
 }
+
+#quote-content {
+  font-size:2.2rem; /* Reduced font size */
+}
+
+
 
 @media (max-width: 768px) {
     .container {
@@ -134,5 +144,22 @@ body {
     .hero-citation {
         font-size: 1rem; /* Reduced font size */
     }
+    #quote-content {
+        font-size: 1.4rem; /* Reduced font size */
+    }
 }
 
+.hidden {
+  display: none;
+}
+
+/* Styles généraux */
+.article-slide {
+    display: none;
+    margin-top: 20px; /* Ajustez selon vos besoins */
+}
+
+/* Classe pour afficher l'article */
+.article-slide.active {
+    display: block;
+}

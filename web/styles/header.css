@@ -21,6 +21,7 @@
     flex-direction: column;
     justify-content: space-between; 
 }
+
 .header-content {
     display: flex;
     flex-direction :row;
@@ -28,14 +29,16 @@
     
     height: 100%;
     /* padding: 0 2rem; */
-    margin: 5px; /* Add some space below the header content */
+    margin: 4px; /* Add some space below the header content */
     
 }
 
 .quote-container {
     background-color: var(--bg-citation); 
     text-align: center;
-    width: 100%; 
+    width: 70%; 
+    max-height: 100px;
+    margin: 0 auto; /* Centre horizontalement le conteneur */
     
 }
     .logo-contenaire{
@@ -60,7 +63,7 @@
             text-align: center;
             width: 100%;
             color: var(--dark-color);
-            font-size: 1.5em;
+            font-size: 3rem;
             border-radius: 8px;
         }
         .contact_text{
@@ -81,6 +84,7 @@
     
     @media (max-width: 768px) 
     {
+       
         .portfolio-title { 
             font-size:1.2em;  
         }
@@ -99,7 +103,7 @@
         .quote-container p {
             padding-top: 1rem;
             color:var(--dark-color);
-            font-size: 18px;
+            /* font-size: 18px; */
             font-weight:bolder;
             font-style:italic;
     

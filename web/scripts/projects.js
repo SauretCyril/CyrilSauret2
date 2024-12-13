@@ -1,4 +1,3 @@
-
 function loadProjects() {
     const projectsContainer = document.getElementById('SK-projects');
     
@@ -16,6 +15,7 @@ function loadProjects() {
                 projectCard.className = 'skill-card floating';
                 projectCard.setAttribute('data-tilt', '');
                 projectCard.setAttribute('data-tilt-max', '10');
+                projectCard.onclick = () => loadArticle(project.url);
 
                 projectCard.innerHTML = `
                     <div class="skill-icon">
