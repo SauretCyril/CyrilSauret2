@@ -11,22 +11,27 @@ function loadProjects() {
         .then(response => response.json())
         .then(data => {
             data.forEach(project => {
-                const projectCard = document.createElement('div');
-                projectCard.className = 'skill-card floating';
-                projectCard.setAttribute('data-tilt', '');
-                projectCard.setAttribute('data-tilt-max', '10');
-                projectCard.onclick = () => loadArticle(project.url);
+                fileExists(project.url).then((is) =>
+                {
+                    if (is) {
+                    const projectCard = document.createElement('div');
+                    projectCard.className = 'skill-card floating';
+                    projectCard.setAttribute('data-tilt', '');
+                    projectCard.setAttribute('data-tilt-max', '10');
+                    projectCard.onclick = ( ) => loadArticle(project.url);
 
-                projectCard.innerHTML = `
-                    <div class="skill-icon">
-                        <img src="${project.icon}" alt="${project.name} icon">
-                    </div>
-                    <p>${project.name}</p>
-                    
-                `;
+                    projectCard.innerHTML = `
+                        <div class="skill-icon">
+                            <img src="${project.icon}" alt="${project.name} icon">
+                        </div>
+                        <p>${project.name}</p>
+                        
+                    `;
 
-                projectsContainer.appendChild(projectCard);
+                    projectsContainer.appendChild(projectCard);
+                }
             });
+        });
 
             // Initialiser Vanilla Tilt après avoir ajouté les cartes
             VanillaTilt.init(document.querySelectorAll(".floating"), {

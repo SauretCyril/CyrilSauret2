@@ -36,9 +36,11 @@
 .quote-container {
     background-color: var(--bg-citation); 
     text-align: center;
+    font-size: 1.5rem;
     width: 70%; 
     max-height: 100px;
     margin: 0 auto; /* Centre horizontalement le conteneur */
+    transition: color 0.3s ease; /* Ajoute une transition pour un changement de couleur fluide */
     
 }
     .logo-contenaire{
@@ -165,6 +167,3 @@
 .hero {
     max-width: 60%;
 }
-
-
-

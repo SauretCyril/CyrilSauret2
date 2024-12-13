@@ -2,7 +2,7 @@ window.current_article="slide-photo";
 let slideshowInterval; // Move slideshowInterval to global scope
 const articleContainer = document.getElementById('TheArticle');
 const slideContainer = document.getElementById('slide-photo');
-const currentArticleView="";
+window.currentArticleView="";
 $(document).ready(function() {
   // Slideshow functionality
   function nextSlide() {
@@ -81,6 +81,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       const quoteContent = document.getElementById('quote-content');
       const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
       quoteContent.textContent = randomQuote;
+      
   }
 
   setInterval(fetchQuote, 1000);
@@ -128,7 +129,8 @@ function loadArticle(file) {
       console.error('Error: Element with ID "TheArticle" not found.');
       return;
   }
-  if (articleContainer.classList.contains('active') && currentArticleView==file) {
+ 
+  if (articleContainer.classList.contains('active') && window.currentArticleView===file) {
       hideArticleContainer();
   }
   else {
@@ -146,7 +148,7 @@ function loadArticle(file) {
               showArticleContainer();
           }
           articleContainer.innerHTML = data;
-          currentArticleView=file;
+          window.currentArticleView=file;
           articleContainer.display = 'block';
            // Ensure the article container is active
           console.log('Article loaded successfully');
@@ -155,32 +157,7 @@ function loadArticle(file) {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  
 
-    // Function to show articleContainer and hide slideContainer
-  
-    // Example usage: Show articleContainer when a submenu link is clicked
-    document.querySelectorAll('.submenu-link').forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const articleId = e.target.getAttribute('data-article');
-            const article = document.getElementById(articleId);
-            if (article) {
-                articleContainer.innerHTML = article.innerHTML;
-                showArticleContainer();
-            }
-        });
-    });
-
-    // Example usage: Hide articleContainer when a main menu link is clicked
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            hideArticleContainer();
-        });
-    });
-});
 
 function showArticleContainer() {
   articleContainer.classList.add('active');
@@ -197,13 +174,49 @@ function hideArticleContainer() {
   $('.hero-slide').show(); // Show all slides
   setInterval(fetchQuote, 1000);
 }
-function addCloseButton() {
-  const articleContainer = document.querySelectorAll('.article-header');
-  
-      const closeButton = document.createElement('span');
-      closeButton.innerHTML = '&times;';
-      closeButton.className = 'close-button';
-      closeButton.onclick = hideArticleContainer;
-      articleContainer.appendChild(closeButton);
-  return articleContainer
+
+async function fileExists(url) {
+  if (url===""){return false;}
+  try {
+      const response = await fetch(url, { method: 'HEAD' });
+      
+      return response.ok;
+  } catch (error) {
+      console.error('Error checking file existence:', error);
+      return false;
+  }
+}
+
+function set_quot_content_color(){
+    const quoteContainer = document.querySelector('.quote-container');
+    const activeSlide = document.querySelector('.hero-slide.active');
+
+    if (activeSlide) {
+        const backgroundImage = activeSlide.style.backgroundImage;
+        const urlMatch = backgroundImage.match(/url\("([^"]+)"\)/);
+
+        if (urlMatch && urlMatch[1]) {
+            const imageUrl = urlMatch[1];
+
+            const img = new Image();
+            img.crossOrigin = 'Anonymous'; // Necessary to avoid CORS issues
+            img.src = imageUrl;
+
+            img.onload = () => {
+                const colorThief = new ColorThief();
+                const dominantColor = colorThief.getColor(img);
+                const textColor = getContrastingColor(dominantColor);
+
+                quoteContainer.style.color = textColor;
+            };
+
+            function getContrastingColor([r, g, b]) {
+                // Calculate perceived luminance
+                const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+                return luminance > 0.5 ? 'black' : 'white'; // Return black or white based on luminance
+            }
+        } else {
+            console.error('No valid URL found in backgroundImage');
+        }
+    }
 }
